@@ -19,7 +19,11 @@ export default [
     name: "strapi::cors",
     config: {
       enabled: true,
-      origin: ["http://localhost:3000"],
+      origin: [
+        "https://archecollectif-front.vercel.app/",
+        "https://archecollectif-back.onrender.com/",
+        "http://localhost:3000",
+      ],
       methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
       headers: ["Content-Type", "Authorization", "Origin", "Accept"],
       credentials: true,

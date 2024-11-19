@@ -20,8 +20,8 @@ export default [
     config: {
       enabled: true,
       origin: [
-        "https://archecollectif-front.vercel.app/",
-        "https://archecollectif-back.onrender.com/",
+        "https://archecollectif-front.vercel.app",
+        "https://archecollectif-back.onrender.com",
         "http://localhost:3000",
       ],
       methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],

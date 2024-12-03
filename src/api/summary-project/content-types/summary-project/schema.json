@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "summary_projects",
+  "info": {
+    "singularName": "summary-project",
+    "pluralName": "summary-projects",
+    "displayName": "Summary_project"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Date": {
+      "type": "date"
+    }
+  }
+}

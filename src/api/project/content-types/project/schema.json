@@ -35,6 +35,9 @@
       "allowedTypes": [
         "files"
       ]
+    },
+    "PDF_Name": {
+      "type": "string"
     }
   }
 }

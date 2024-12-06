@@ -395,6 +395,74 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiActualitesTagActualitesTag
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'actualites_tags';
+  info: {
+    displayName: 'Actualites_tag';
+    pluralName: 'actualites-tags';
+    singularName: 'actualites-tag';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    actualites: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::actualtie.actualtie'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::actualites-tag.actualites-tag'
+    > &
+      Schema.Attribute.Private;
+    Name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiActualtieActualtie extends Struct.CollectionTypeSchema {
+  collectionName: 'actualties';
+  info: {
+    description: '';
+    displayName: 'Actualites';
+    pluralName: 'actualties';
+    singularName: 'actualtie';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    actualites_tag: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::actualites-tag.actualites-tag'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Lien: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::actualtie.actualtie'
+    > &
+      Schema.Attribute.Private;
+    Nom_lien: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiProductProduct extends Struct.CollectionTypeSchema {
   collectionName: 'products';
   info: {
@@ -1046,6 +1114,8 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::about.about': ApiAboutAbout;
+      'api::actualites-tag.actualites-tag': ApiActualitesTagActualitesTag;
+      'api::actualtie.actualtie': ApiActualtieActualtie;
       'api::product.product': ApiProductProduct;
       'api::project.project': ApiProjectProject;
       'api::summary-project.summary-project': ApiSummaryProjectSummaryProject;

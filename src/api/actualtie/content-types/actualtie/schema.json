@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "actualties",
+  "info": {
+    "singularName": "actualtie",
+    "pluralName": "actualties",
+    "displayName": "Actualites",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "actualites_tag": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::actualites-tag.actualites-tag",
+      "inversedBy": "actualites"
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Lien": {
+      "type": "string"
+    },
+    "Nom_lien": {
+      "type": "string"
+    }
+  }
+}

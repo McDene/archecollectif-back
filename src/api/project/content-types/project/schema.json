@@ -36,8 +36,8 @@
         "files"
       ]
     },
-    "PDF_Name": {
-      "type": "string"
+    "Descriptif_projet": {
+      "type": "text"
     }
   }
 }

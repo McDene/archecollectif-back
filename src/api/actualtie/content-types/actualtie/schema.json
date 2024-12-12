@@ -34,6 +34,24 @@
     },
     "Nom_lien": {
       "type": "string"
+    },
+    "Event_content": {
+      "type": "enumeration",
+      "enum": [
+        "URL",
+        "PDF"
+      ],
+      "required": true
+    },
+    "PDF": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

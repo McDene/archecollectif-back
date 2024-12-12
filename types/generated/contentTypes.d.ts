@@ -448,6 +448,8 @@ export interface ApiActualtieActualtie extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    Event_content: Schema.Attribute.Enumeration<['URL', 'PDF']> &
+      Schema.Attribute.Required;
     Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     Lien: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -457,6 +459,7 @@ export interface ApiActualtieActualtie extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     Nom_lien: Schema.Attribute.String;
+    PDF: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

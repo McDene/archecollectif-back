@@ -4,7 +4,8 @@
   "info": {
     "singularName": "summary-project",
     "pluralName": "summary-projects",
-    "displayName": "Summary_project"
+    "displayName": "Resume_projet",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,14 +16,15 @@
       "type": "string"
     },
     "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "Date": {
       "type": "date"

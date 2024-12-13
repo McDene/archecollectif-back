@@ -373,7 +373,7 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
   collectionName: 'abouts';
   info: {
     description: '';
-    displayName: 'About';
+    displayName: 'A_propos';
     pluralName: 'abouts';
     singularName: 'about';
   };
@@ -467,40 +467,11 @@ export interface ApiActualtieActualtie extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiProductProduct extends Struct.CollectionTypeSchema {
-  collectionName: 'products';
-  info: {
-    displayName: 'Product';
-    pluralName: 'products';
-    singularName: 'product';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    image: Schema.Attribute.Media<'images', true>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::product.product'
-    > &
-      Schema.Attribute.Private;
-    name: Schema.Attribute.String;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiProjectProject extends Struct.CollectionTypeSchema {
   collectionName: 'projects';
   info: {
     description: '';
-    displayName: 'Project';
+    displayName: 'Projets';
     pluralName: 'projects';
     singularName: 'project';
   };
@@ -533,7 +504,8 @@ export interface ApiSummaryProjectSummaryProject
   extends Struct.CollectionTypeSchema {
   collectionName: 'summary_projects';
   info: {
-    displayName: 'Summary_project';
+    description: '';
+    displayName: 'Resume_projet';
     pluralName: 'summary-projects';
     singularName: 'summary-project';
   };
@@ -563,7 +535,8 @@ export interface ApiSummaryProjectSummaryProject
 export interface ApiTeamTeam extends Struct.CollectionTypeSchema {
   collectionName: 'teams';
   info: {
-    displayName: 'Team';
+    description: '';
+    displayName: 'Equipe';
     pluralName: 'teams';
     singularName: 'team';
   };
@@ -1120,7 +1093,6 @@ declare module '@strapi/strapi' {
       'api::about.about': ApiAboutAbout;
       'api::actualites-tag.actualites-tag': ApiActualitesTagActualitesTag;
       'api::actualtie.actualtie': ApiActualtieActualtie;
-      'api::product.product': ApiProductProduct;
       'api::project.project': ApiProjectProject;
       'api::summary-project.summary-project': ApiSummaryProjectSummaryProject;
       'api::team.team': ApiTeamTeam;

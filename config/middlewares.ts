@@ -23,7 +23,7 @@ export default [
         "https://demo.larchcollectif.ch"
         "https://archecollectif-front.vercel.app",
         "https://archecollectif-back.onrender.com",
-        "https://admin.larchcollectif.ch"
+        "https://admin.larchcollectif.ch",
         "http://localhost:3000",
       ],
       methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],

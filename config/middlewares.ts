@@ -20,7 +20,7 @@ export default [
     config: {
       enabled: true,
       origin: [
-        "https://demo.larchcollectif.ch"
+        "https://demo.larchcollectif.ch",
         "https://archecollectif-front.vercel.app",
         "https://archecollectif-back.onrender.com",
         "https://admin.larchcollectif.ch",
